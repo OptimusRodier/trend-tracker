@@ -56,7 +56,7 @@ export function Schema({
     url,
   };
   
-  schema.sameAs = Object.values(social).filter(Boolean)
+
 
   if (as === "website") {
     schema.name = title;

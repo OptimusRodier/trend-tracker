@@ -1,12 +1,17 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row } from "@/once-ui/components";
+import {
+  Heading,
+  Text,
+  Button,
+  Avatar,
+  RevealFx,
+  Column,
+  Flex,
+} from "@/once-ui/components";
 
-
-import { baseURL, routes } from "@/app/resources";
-import { home, about, } from "@/app/resources/content";
-import { Mailchimp } from "@/components";
-
+import { baseURL } from "@/app/resources";
+import { home, about } from "@/app/resources/content";
 import { Meta, Schema } from "@/once-ui/modules";
 
 export async function generateMetadata() {
@@ -28,45 +33,35 @@ export default function Home() {
         title={home.title}
         description={home.description}
         image={`${baseURL}/og?title=${encodeURIComponent(home.title)}`}
-        
       />
+
       <Column fillWidth paddingY="24" gap="m">
         <Column maxWidth="s">
-          {home.featured && (
-          <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
-            <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
-              href={home.featured.href}>
-              <Row paddingY="2">{home.featured.title}</Row>
-            </Badge>
-          </RevealFx>
-          )}
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
             <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
           </RevealFx>
+
           <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="32">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
               {home.subline}
             </Text>
           </RevealFx>
+
           <RevealFx paddingTop="12" delay={0.4} horizontal="start" paddingLeft="12">
             <Button
-              id="about"
               data-border="rounded"
               href={about.path}
               variant="secondary"
               size="m"
               arrowIcon
             >
-
+              {about.title}
             </Button>
           </RevealFx>
         </Column>
       </Column>
-
-      
-      
     </Column>
   );
 }

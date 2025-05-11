@@ -21,17 +21,22 @@ const home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `trend tracker`,
-  description: `Portfolio website showcasing my work as a Rodierintel smart trend analytics dashboard `,
-  headline: <>Building bridges between design and code</>,
-
+  title: `Trend Tracker`,
+  description: `Smart trend analytics dashboard powered by RodierIntel.`,
+  headline: <>Smarter decisions through trend data</>,
+  featured: {
+    display: true,
+    title: <>Explore: <strong className="ml-2">E-commerce Trends</strong></>,
+    href: "/ecommerce",
+  },
   subline: (
     <>
-      I'm Selene, a design engineer at <Logo icon={false} style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      Your assistant for identifying what's rising in fashion and politics.
+      Receive top trending insights and fast.
     </>
   ),
 };
+
 
 
 
@@ -72,7 +77,7 @@ const others = {
 const about = {
   path: "/about",
   label: "About",
-  title: `About the project`,
+  title: `check the recent political trends`,
   //description: `Meet ${person.name}, ${person.role} from ${person.location}`,
 
 
