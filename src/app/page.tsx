@@ -1,12 +1,12 @@
 import React from "react";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row } from "@/once-ui/components";
-import { Projects } from "@/components/work/Projects";
+
 
 import { baseURL, routes } from "@/app/resources";
-import { home, about, person, newsletter } from "@/app/resources/content";
+import { home, about, } from "@/app/resources/content";
 import { Mailchimp } from "@/components";
-import { Posts } from "@/components/blog/Posts";
+
 import { Meta, Schema } from "@/once-ui/modules";
 
 export async function generateMetadata() {
@@ -28,11 +28,7 @@ export default function Home() {
         title={home.title}
         description={home.description}
         image={`${baseURL}/og?title=${encodeURIComponent(home.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
-        }}
+        
       />
       <Column fillWidth paddingY="24" gap="m">
         <Column maxWidth="s">
@@ -63,37 +59,14 @@ export default function Home() {
               size="m"
               arrowIcon
             >
-              <Flex gap="8" vertical="center">
-                {about.avatar.display && (
-                  <Avatar
-                    style={{ marginLeft: "-0.75rem", marginRight: "0.25rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Flex>
+
             </Button>
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
-      </RevealFx>
-      {routes["/blog"] && (
-        <Flex fillWidth gap="24" mobileDirection="column">
-          <Flex flex={1} paddingLeft="l" paddingTop="24">
-            <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              Latest from the blog
-            </Heading>
-          </Flex>
-          <Flex flex={3} paddingX="20">
-            <Posts range={[1, 2]} columns="2" />
-          </Flex>
-        </Flex>
-      )}
-      <Projects range={[2]} />
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
+
+      
+      
     </Column>
   );
 }
